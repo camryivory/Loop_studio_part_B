@@ -21,23 +21,27 @@ console.log(newString)
 
 //Testing User Input//
 
+//CAMRY QUESTION: If initial user input is the wrong length, but new user input is the correct length, how do I get the joining code to run again, instead of just printing the newly entered string?//
+
 let userCode1 = input.question("Enter the first code: ");
 let userCode2 = input.question("Enter the second code: ");
 
 
-if (userCode1.length === userCode2.length) {
+if (userCode1.length !== userCode2.length) {
+  while (userCode1.length !== userCode2.length){
+  userCode2 = input.question(`Invalid entry. Second user code must contain ${userCode1.length} characters. \nPlease try again: `)}
+} else if (userCode1.length === userCode2.length)
+{
   for (let i = 0; i < userCode1.length; i++){
     userCodeCombo = userCodeCombo + userCode1[i] + userCode2[i]
 };  
   
-console.log(userCodeCombo)
+console.log(`${userCodeCombo}\nSelf-destruct sequence activated!`)
 
-} else { 
+} 
 
-while (userCode1.length !== userCode2.length){
-  userCode2 = input.question(`Invalid entry. Second user code must contain ${userCode1.length} characters. Please try again: `)}
 
-}
+
 
 
 
